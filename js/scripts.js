@@ -30,7 +30,7 @@ map.on('style.load', function() {
     type: 'line',
     source:'philly-bike',
     paint: {
-      'line-width': 2,
+      'line-width': 1.5,
       'line-opacity': 1,
       'line-color': 'green',
     }
