@@ -10,16 +10,6 @@ var map = new mapboxgl.Map({
   zoom: initialZoom
 });
 
-var initOptions = {
-  container: 'map-container', // put the map in this container
-  style: 'mapbox://styles/mapbox/streets-v11', // use this basemap
-  center: initialCenterPoint, // initial view center
-  zoom: initialZoom, // initial view zoom level (0-18)
-}
-
-// create the new map
-var map = new mapboxgl.Map(initOptions);
-
 // add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
 
