@@ -17,6 +17,9 @@ map.addControl(new mapboxgl.NavigationControl());
 map.on('style.load', function() {
 
   // add a geojson source to the map using our external geojson file
+  // https://www.opendataphilly.org/dataset/bike-network
+  // https://www.opendataphilly.org/dataset/bike-network/resource/8f30d7e4-127a-4cc0-9df3-6db7bcca41be
+  // http://data.phl.opendata.arcgis.com/datasets/b5f660b9f0f44ced915995b6d49f6385_0.geojson
   map.addSource('philly-bike', {
     type: 'geojson',
     data: './data/philly-bike-data.geojson',
