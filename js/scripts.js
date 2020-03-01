@@ -47,7 +47,7 @@ map.on('style.load', function() {
           ['Contraflow w Conventional, same', '#ff7f50',],
           ['Bus Bike Lane', '#4ca3dd',],
           ['Sharrow', '#ee5c42',],
-          ['Two Way Unprotected Bicycle Lane', #FF0000,],
+          ['Two Way Unprotected Bicycle Lane', '#FF0000',],
         ]
        },
       'line-width': 2.5,
