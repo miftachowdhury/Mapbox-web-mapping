@@ -3,6 +3,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWNob3dkaHVyeSIsImEiOiJjazZzdHJta2swNzN2M2tye
 var initialCenterPoint = [-75.1652, 39.975]
 var initialZoom = 11
 
+var defaultText = '<p>Move the mouse over the map to get more info on a bike lane</p>'
+$('#feature-info').html(defaultText)
+
 var map = new mapboxgl.Map({
   container: 'map-container',
   style: 'mapbox://styles/mapbox/light-v10',
@@ -51,4 +54,59 @@ map.on('style.load', function() {
     }
   });
 
+  map.addSource('highlight-feature', {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: []
+    }
+  })
+
+  // add a layer for the highlighted lane
+  map.addLayer({
+    id: 'highlight-line',
+    type: 'line',
+    source: 'highlight-feature',
+    paint: {
+      'line-width': 2,
+      'line-opacity': 1,
+      'line-color': 'yellow',
+    }
+  });
+  
+  map.on('mousemove', function (e) {
+
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['bike-lanes'],
+    });
+
+    // if the mouse pointer is over a feature on our layer of interest
+    // take the data for that feature and display it in the sidebar
+    if (features.length > 0) {
+      map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
+
+      var hoveredFeature = features[0]
+      var featureInfo = `
+        <h4>${hoveredFeature.properties.STREETNAME}</h4>
+        <p><strong>Lane Type:</strong> ${hoveredFeature.properties.TYPE}</p>
+      `
+      $('#feature-info').html(featureInfo)
+
+      // set the moused over lane as the data for the highlight source
+      map.getSource('highlight-feature').setData(hoveredFeature.geometry);
+    } else {
+      // if there is no feature under the mouse, reset things:
+      map.getCanvas().style.cursor = 'default'; // make the cursor default
+
+      // reset the highlight source to an empty featurecollection
+      map.getSource('highlight-feature').setData({
+        type: 'FeatureCollection',
+        features: []
+      });
+
+      // reset the default message
+      $('#feature-info').html(defaultText)
+    }
+  })
+  
 })
