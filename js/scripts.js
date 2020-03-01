@@ -31,8 +31,9 @@ map.on('style.load', function() {
   // let's make sure the source got added by logging the current map state to the console
   console.log(map.getStyle().sources)
 
-  var laneTypes = ['literal', ['Bus Bike Lane', 'Sharrow']]
-  console.log(laneTypes)
+  var laneTypes = ['Bus Bike Lane', 'Sharrow']
+  var laneTypesLit = ['literal', laneTypes]
+  console.log(laneTypesLit)
   
   map.addLayer({
     id: 'bike-lanes',
@@ -58,7 +59,7 @@ map.on('style.load', function() {
       'line-width': 2.75,
       'line-opacity': 1,
     },
-    'filter': ['match', ['get', 'TYPE'], ['Bus Bike Lane', 'Sharrow'], true, false],
+    'filter': ['match', ['get', 'TYPE'], laneTypes, true, false],
   });
 
   map.addSource('highlight-feature', {
