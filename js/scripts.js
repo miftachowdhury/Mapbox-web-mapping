@@ -32,6 +32,7 @@ map.on('style.load', function() {
   console.log(map.getStyle().sources)
 
   var laneTypes = ['literal', ['Bus Bike Lane', 'Sharrow']]
+  console.log(laneTypes)
   
   map.addLayer({
     id: 'bike-lanes',
@@ -57,7 +58,7 @@ map.on('style.load', function() {
       'line-width': 2.75,
       'line-opacity': 1,
     },
-    'filter': ['in', '$TYPE', laneTypes]
+    'filter': ['in', '$TYPE', '$laneTypes']
   });
 
   map.addSource('highlight-feature', {
