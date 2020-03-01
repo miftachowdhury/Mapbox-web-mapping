@@ -31,6 +31,8 @@ map.on('style.load', function() {
   // let's make sure the source got added by logging the current map state to the console
   console.log(map.getStyle().sources)
 
+  var laneTypes = ['Bus Bike Lane', 'Sharrow']
+  
   map.addLayer({
     id: 'bike-lanes',
     type: 'line',
@@ -55,6 +57,7 @@ map.on('style.load', function() {
       'line-width': 2.75,
       'line-opacity': 1,
     }
+    'filter': ['in', '$TYPE', laneTypes]
   });
 
   map.addSource('highlight-feature', {
