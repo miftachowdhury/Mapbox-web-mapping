@@ -34,7 +34,7 @@ button:hover {
 }
 
 #feature-info {
-  background: #41779c;
+  background: #A5ACAF;
   padding: 15px;
   min-height: 150px;
 }
@@ -46,8 +46,9 @@ button:hover {
   top: 0;
   bottom: 0;
   width: 450px;
-  background-color: #0a99c3;
+  background-color: #004C55;
   color: #FFF;
   padding: 25px;
   box-sizing: border-box;
 }
+
