@@ -19,6 +19,8 @@ map.addControl(new mapboxgl.NavigationControl());
 // wait for the initial style to Load
 map.on('style.load', function() {
 
+  $("input[type=checkbox]").prop('checked', $(this).prop('checked'));
+  
   // add a geojson source to the map using our external geojson file
   // https://www.opendataphilly.org/dataset/bike-network
   // https://www.opendataphilly.org/dataset/bike-network/resource/8f30d7e4-127a-4cc0-9df3-6db7bcca41be
