@@ -41,12 +41,11 @@ map.on('style.load', function() {
   }
     
   
-  
   $(":checkbox").on("click", (function(){    
     
     laneTypes = [];
     $.each($("input[name='laneType']:checked"), function(){
-      laneTypes.push(laneList.$(this).val());
+      laneTypes.push(laneList.prop(.$(this).val()));
     });
     
     console.log(laneTypes)
