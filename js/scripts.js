@@ -1,7 +1,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibWNob3dkaHVyeSIsImEiOiJjazZzdHJta2swNzN2M2tyeHBmZTcycTI4In0.StlNQAWNUjcDoPBeZyIvGw';
 
 var initialCenterPoint = [-75.1652, 39.975]
-var initialZoom = 11
+var initialZoom = 13
 
 var defaultText = '<p>Move the mouse over the map to get more info on a bike lane</p>'
 $('#feature-info').html(defaultText)
@@ -47,9 +47,10 @@ map.on('style.load', function() {
           ['Contraflow w Conventional, same', '#ff7f50',],
           ['Bus Bike Lane', '#4ca3dd',],
           ['Sharrow', '#ee5c42',],
+          ['Two Way Unprotected Bicycle Lane', #FF0000,],
         ]
        },
-      'line-width': 1.5,
+      'line-width': 2.5,
       'line-opacity': 1,
     }
   });
@@ -68,7 +69,7 @@ map.on('style.load', function() {
     type: 'line',
     source: 'highlight-feature',
     paint: {
-      'line-width': 2,
+      'line-width': 3,
       'line-opacity': 1,
       'line-color': 'yellow',
     }
