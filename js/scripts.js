@@ -33,9 +33,21 @@ map.on('style.load', function() {
     type: 'line',
     source:'philly-bike',
     paint: {
+      'line-color': {
+        type: 'categorical',
+        property: 'TYPE',
+        stops: [
+          ['Paint Buffered', #27d683,],
+          ['Paint Buffered w Conventional', #27d683,],
+          ['Conventional', #ff7f50,],
+          ['Conventional w Sharrows', #ff7f50,],
+          ['Contraflow w Conventional, same', #ff7f50,],
+          ['Bus Bike Lane', #4ca3dd,],
+          ['Sharrow', #ee5c42,],
+        ]
+       },
       'line-width': 1.5,
       'line-opacity': 1,
-      'line-color': 'green',
     }
   });
 
