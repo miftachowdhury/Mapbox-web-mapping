@@ -46,7 +46,7 @@ map.on('style.load', function() {
     laneTypes = [];
     $.each($("input[name='laneType']:checked"), function(){
       var value = $(this).val()
-      console.log(laneList[value])
+      laneTypes = laneTypes.concat(laneList[value])
     });
     
     console.log(laneTypes)
