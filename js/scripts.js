@@ -31,7 +31,7 @@ map.on('style.load', function() {
   // let's make sure the source got added by logging the current map state to the console
   console.log(map.getStyle().sources)
 
-  var laneTypes = ['Bus Bike Lane', 'Sharrow']
+  var laneTypes = ['literal', ['Bus Bike Lane', 'Sharrow']]
   
   map.addLayer({
     id: 'bike-lanes',
