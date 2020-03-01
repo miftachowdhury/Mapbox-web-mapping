@@ -17,6 +17,33 @@
     <h3>Philadelphia Bike Network</h3>
     <p>This map shows bike lanes in Philadelphia, color-coded by lane type</p>
     <div id='feature-info'></div>
+      
+    <div id="type-checkboxes">
+        <h4>Show Lanes:(s)</h4>
+        <form>
+            <input type="checkbox" class="box" id="protected" name="protected" value="protected">
+            <label for="protected" class="checkbox">Protected</label><br>
+            
+            <input type="checkbox" class="box" id="paintBuff" name="paintBuff" value="paintBuff">
+            <label for="paintBuff" class="checkbox">Paint Buffered</label><br>
+            
+            <input type="checkbox" class="box" id="conventional" name="conventional" value="conventional">
+            <label for="conventional" class="checkbox">Conventional</label><br>
+            
+            <input type="checkbox" class="box" id="busLane" name="busLane" value="busLane">
+            <label for="busLane" class="checkbox">Bus Bike Lane</label><br>
+            
+            <input type="checkbox" class="box" id="sharrow" name="sharrow" value="sharrow">
+            <label for="sharrow" class="checkbox">Sharrows</label><br>
+            
+            <input type="checkbox" class="box" id="unprotected" name="unprotected" value="unprotected">
+            <label for="unprotected" class="checkbox">Unprotected</label><br>
+                        
+            <br>
+        </form>
+    </div>  
+      
+      
   </div>
 
   <div id='map-container'></div>
