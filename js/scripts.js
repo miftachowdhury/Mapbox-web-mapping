@@ -58,7 +58,7 @@ map.on('style.load', function() {
       'line-width': 2.75,
       'line-opacity': 1,
     },
-    'filter': ['==', 'TYPE', 'Bus Bike Lane'],
+    'filter': ['match', ['get, 'TYPE'], ['Bus Bike Lane', 'Sharrow'], true, false],
   });
 
   map.addSource('highlight-feature', {
