@@ -1,6 +1,6 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibWNob3dkaHVyeSIsImEiOiJjazZzdHJta2swNzN2M2tyeHBmZTcycTI4In0.StlNQAWNUjcDoPBeZyIvGw';
 
-var initialCenterPoint = [-75.1652, 39.965]
+var initialCenterPoint = [-75.1652, 39.955]
 var initialZoom = 12.5
 
 var defaultText = '<p>Move the mouse over the map to get more info on a bike lane</p>'
@@ -44,15 +44,15 @@ map.on('style.load', function() {
           ['Two Way Protected Bicycle Lane', '#39FF14',],
           ['Paint Buffered', '#27d683',],
           ['Paint Buffered w Conventional', '#27d683',],
-          ['Conventional', '#C4321F',],
-          ['Conventional w Sharrows', '#C4321F',],
-          ['Contraflow w Conventional, same', '#C4321F',],
+          ['Conventional', '#ee5c42',],
+          ['Conventional w Sharrows', '#ee5c42',],
+          ['Contraflow w Conventional, same', '#ee5c42',],
           ['Bus Bike Lane', '#4ca3dd',],
-          ['Sharrow', '#ee5c42',],
+          ['Sharrow', '#C4321F',],
           ['Two Way Unprotected Bicycle Lane', '#8B0000',],
         ]
        },
-      'line-width': 3.5,
+      'line-width': 2.75,
       'line-opacity': 1,
     }
   });
@@ -71,7 +71,7 @@ map.on('style.load', function() {
     type: 'line',
     source: 'highlight-feature',
     paint: {
-      'line-width': 4,
+      'line-width': 3.5,
       'line-opacity': 1,
       'line-color': 'yellow',
     }
