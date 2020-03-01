@@ -64,3 +64,8 @@ input.box {
  width: 20px;
  height: 20px;
 }
+
+h4 {
+  font-size:1.9rem;
+  margin-bottom:15px;
+}
