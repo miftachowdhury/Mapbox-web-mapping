@@ -132,6 +132,6 @@ map.on('style.load', function() {
       $('#feature-info').html(defaultText)
     }
   })
- });
+ }));
   
 })
