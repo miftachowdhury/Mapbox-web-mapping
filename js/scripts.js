@@ -32,12 +32,12 @@ map.on('style.load', function() {
   console.log(map.getStyle().sources)
 
   var laneList = {
-    'protected': ['One Way Protected Bicycle Lane', 'Two Way Protected Bicycle Lane'],
-    'paintBuff': ['Paint Buffered', 'Paint Buffered w Conventional'],
-    'conventional': ['Conventional', 'Conventional w Sharrows', 'Contraflow w Conventional, same'],
-    'busLane': ['Bus Bike Lane'],
-    'sharrow': ['Sharrows'],
-    'unprotected': ['Two Way Unprotected Bicycle Lane'],
+    protected: ['One Way Protected Bicycle Lane', 'Two Way Protected Bicycle Lane'],
+    paintBuff: ['Paint Buffered', 'Paint Buffered w Conventional'],
+    conventional: ['Conventional', 'Conventional w Sharrows', 'Contraflow w Conventional, same'],
+    busLane: ['Bus Bike Lane'],
+    sharrow: ['Sharrows'],
+    unprotected: ['Two Way Unprotected Bicycle Lane'],
   }
     
   
