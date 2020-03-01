@@ -56,7 +56,7 @@ map.on('style.load', function() {
        },
       'line-width': 2.75,
       'line-opacity': 1,
-    }
+    },
     'filter': ['in', '$TYPE', laneTypes]
   });
 
@@ -93,7 +93,7 @@ map.on('style.load', function() {
 
       var hoveredFeature = features[0]
       var featureInfo = `
-        <h4>${hoveredFeature.properties.STREETNAME}</h4>
+        <p><strong>${hoveredFeature.properties.STREETNAME}</strong></p>
         <p><strong>Lane Type:</strong> ${hoveredFeature.properties.TYPE}</p>
       `
       $('#feature-info').html(featureInfo)
