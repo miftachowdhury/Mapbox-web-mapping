@@ -46,7 +46,7 @@ map.on('style.load', function() {
     paintBuff: ['Paint Buffered', 'Paint Buffered w Conventional'],
     conventional: ['Conventional', 'Conventional w Sharrows', 'Contraflow w Conventional, same'],
     busLane: ['Bus Bike Lane'],
-    sharrow: ['Sharrows'],
+    sharrow: ['Sharrow'],
     unprotected: ['Two Way Unprotected Bicycle Lane'],
   }
     
@@ -80,7 +80,7 @@ map.on('style.load', function() {
     
   $(":checkbox").on("click", (function(){    
     
-    laneTypes = [];
+    laneTypes = ['Blank'];
     $.each($("input[name='laneType']:checked"), function(){
       var value = $(this).val()
       laneTypes = laneTypes.concat(laneList[value])
