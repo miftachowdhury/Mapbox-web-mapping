@@ -27,6 +27,14 @@ map.on('style.load', function() {
     type: 'geojson',
     data: './data/philly-bike-data.geojson',
   });
+  
+  map.addSource('highlight-feature', {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: []
+    }
+  })
 
   // let's make sure the source got added by logging the current map state to the console
   console.log(map.getStyle().sources)
@@ -40,18 +48,7 @@ map.on('style.load', function() {
     unprotected: ['Two Way Unprotected Bicycle Lane'],
   }
     
-  
-  $(":checkbox").on("click", (function(){    
-    
-    laneTypes = [];
-    $.each($("input[name='laneType']:checked"), function(){
-      var value = $(this).val()
-      laneTypes = laneTypes.concat(laneList[value])
-    });
-    
-    console.log(laneTypes)
-      
-    map.addLayer({
+  map.addLayer({
     id: 'bike-lanes',
     type: 'line',
     source:'philly-bike',
@@ -75,16 +72,25 @@ map.on('style.load', function() {
       'line-width': 2.75,
       'line-opacity': 1,
     },
-    'filter': ['match', ['get', 'TYPE'], laneTypes, true, false],
+    
   });
+  
+    
+  $(":checkbox").on("click", (function(){    
+    
+    laneTypes = [];
+    $.each($("input[name='laneType']:checked"), function(){
+      var value = $(this).val()
+      laneTypes = laneTypes.concat(laneList[value])
+    });
+    
+    console.log(laneTypes)
+    
+    map.setFilter('bike-lanes', ['match', ['get', 'TYPE'], laneTypes, true, false]);
+  
+  }));
+    
 
-  map.addSource('highlight-feature', {
-    type: 'geojson',
-    data: {
-      type: 'FeatureCollection',
-      features: []
-    }
-  })
 
   // add a layer for the highlighted lane
   map.addLayer({
@@ -132,6 +138,5 @@ map.on('style.load', function() {
       $('#feature-info').html(defaultText)
     }
   })
- }));
   
 })
