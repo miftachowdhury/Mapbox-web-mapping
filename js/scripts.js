@@ -35,9 +35,9 @@ map.on('style.load', function() {
     'protected': ['One Way Protected Bicycle Lane', 'Two Way Protected Bicycle Lane'],
     'paintBuff': ['Paint Buffered', 'Paint Buffered w Conventional'],
     'conventional': ['Conventional', 'Conventional w Sharrows', 'Contraflow w Conventional, same'],
-    'busLane': 'Bus Bike Lane',
-    'sharrow': 'Sharrows',
-    'unprotected': 'Two Way Unprotected Bicycle Lane',
+    'busLane': ['Bus Bike Lane'],
+    'sharrow': ['Sharrows'],
+    'unprotected': ['Two Way Unprotected Bicycle Lane'],
   }
     
   
@@ -45,7 +45,8 @@ map.on('style.load', function() {
     
     laneTypes = [];
     $.each($("input[name='laneType']:checked"), function(){
-      laneTypes.push(laneList.prop($(this).val()));
+      var value = $(this).val()
+      console.log(value)
     });
     
     console.log(laneTypes)
