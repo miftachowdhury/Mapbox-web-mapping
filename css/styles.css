@@ -7,6 +7,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-size: 1.3rem;
 }
 
 /* absolute position the map container as full screen, leaving 300 pixels on the left */
@@ -36,7 +37,8 @@ button:hover {
 #feature-info {
   background: #A5ACAF;
   padding: 15px;
-  min-height: 150px;
+  min-height: 100px;
+  font-size: 1.3rem;
 }
 
 /* sidebar is fixed with and positioned to the left */
