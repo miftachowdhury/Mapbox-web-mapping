@@ -31,11 +31,27 @@ map.on('style.load', function() {
   // let's make sure the source got added by logging the current map state to the console
   console.log(map.getStyle().sources)
 
-  var laneTypes = ['Bus Bike Lane', 'Sharrow']
-  var laneTypesLit = ['literal', laneTypes]
-  console.log(laneTypesLit)
+  var laneList = {
+    protected: ['One Way Protected Bicycle Lane', 'Two Way Protected Bicycle Lane'],
+    paintBuff: ['Paint Buffered', 'Paint Buffered w Conventional'],
+    conventional: ['Conventional', 'Conventional w Sharrows', 'Contraflow w Conventional, same'],
+    busLane: 'Bus Bike Lane',
+    sharrow: 'Sharrows',
+    unprotected: 'Two Way Unprotected Bicycle Lane',
+  }
+    
   
-  map.addLayer({
+  
+  $(":checkbox").on("click", (function(){    
+    
+    laneTypes = [];
+    $.each($("input[name='laneType']:checked"), function(){
+      laneTypes.push(laneList.$(this).val());
+    });
+    
+    console.log(laneTypes)
+      
+    map.addLayer({
     id: 'bike-lanes',
     type: 'line',
     source:'philly-bike',
@@ -116,5 +132,6 @@ map.on('style.load', function() {
       $('#feature-info').html(defaultText)
     }
   })
+ });
   
 })
