@@ -58,7 +58,7 @@ map.on('style.load', function() {
       'line-width': 2.75,
       'line-opacity': 1,
     },
-    'filter': ['in', '$TYPE', '$laneTypes']
+    'filter': ['in', '$TYPE', ['literal', ['Bus Bike Lane', 'Sharrow']]],
   });
 
   map.addSource('highlight-feature', {
