@@ -42,7 +42,7 @@ console.log(arrProgsNYC.length);
 $(document).ready(function() {
   
       // Create and map markers
-    arrDisp.forEach((item) => {
+    arrProgsNYC.forEach((item) => {
      
         oneMarker = new mapboxgl.Marker({
           color: "#FF4500"
