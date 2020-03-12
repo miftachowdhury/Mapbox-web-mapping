@@ -35,7 +35,7 @@ button:hover {
 }
 
 #feature-info {
-  background: #A5ACAF;
+  background: lightblue;
   padding: 15px;
   min-height: 100px;
   font-size: 1.3rem;
@@ -48,7 +48,7 @@ button:hover {
   top: 0;
   bottom: 0;
   width: 450px;
-  background-color: #004C55;
+  background-color: darkgreen;
   color: #FFF;
   padding: 25px;
   box-sizing: border-box;
