@@ -9,5 +9,5 @@ var map = new mapboxgl.Map({
   center: initialCenterPoint,
   zoom: initialZoom
 });
-
+//commit
 map.addControl(new mapboxgl.NavigationControl());
