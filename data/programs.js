@@ -33,6 +33,31 @@ data.forEach((item) => {
 console.log(arrProgs.length);
 
 arrProgsNYC = [];
-    arrBoro = arrFac.filter(obj=> {
-      return boroList.includes(obj.borough);
+arrProgsNYC = arrProgs.filter(obj=> {
+      return obj.region==='NYCDOH';
     });
+
+console.log(arrProgsNYC.length);
+
+$(document).ready(function() {
+  
+      // Create and map markers
+    arrDisp.forEach((item) => {
+     
+        oneMarker = new mapboxgl.Marker({
+          color: "#FF4500"
+        })
+        .setLngLat([item.long, item.lat])
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                  .setHTML(`<b>${item.facName}</b><br>${item.phone}`))
+        .addTo(map);
+       currentMarkers.push(oneMarker);       
+    });
+    
+    
+    console.log(arrDisp);
+  }));
+  
+  
+
+});
