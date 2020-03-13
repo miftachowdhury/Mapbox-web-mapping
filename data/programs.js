@@ -42,9 +42,8 @@ console.log(arrProgsNYC.length);
 $(document).ready(function() {
   
       // Create and map markers
-    arrProgsNYC.forEach((item) => {
-     
-        oneMarker = new mapboxgl.Marker({
+    arrProgsNYC.forEach((item) => { 
+       oneMarker = new mapboxgl.Marker({
           color: "#FF4500"
         })
         .setLngLat([item.long, item.lat])
@@ -53,11 +52,5 @@ $(document).ready(function() {
         .addTo(map);
        currentMarkers.push(oneMarker);       
     });
-    
-    
-    console.log(arrDisp);
-  }));
-  
-  
-
+       
 });
