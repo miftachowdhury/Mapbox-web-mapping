@@ -42,9 +42,10 @@ console.log(arrProgsNYC.length);
 $(document).ready(function() {
   
       // Create and map markers
+    var currentMarkers = [];
     arrProgsNYC.forEach((item) => { 
        oneMarker = new mapboxgl.Marker({
-          color: "#FF4500"
+          color: "#008000"
         })
         .setLngLat([item.long, item.lat])
         .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
