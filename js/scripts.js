@@ -9,5 +9,50 @@ var map = new mapboxgl.Map({
   center: initialCenterPoint,
   zoom: initialZoom
 });
-//commit
+
+// add zoom and rotation controls to the map
 map.addControl(new mapboxgl.NavigationControl());
+
+// wait for the initial style to Load
+map.on('style.load', function() {
+  
+  // converted shapefile to GeoJSON from: https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr
+  // add GeoJSON source to the map
+  map.addSource('school-source', {
+    type: 'geojson',
+    data: './data/school_points.geojson',
+  });
+  
+  // add empty source for highlight feature later
+  map.addSource('highlight-feature', {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: []
+    }
+  }) 
+  
+  // let's make sure the sources got added by logging the current map state to the console
+  console.log(map.getStyle().sources)
+ 
+  // add the school points layer to the map
+  map.addLayer({
+    id: 'school-points',
+    type: 'circle',
+    source:'philly-bike',
+    paint: {
+
+  //close paint: *{*	
+    },
+    
+  //close map.addLayer({
+  });
+  
+  
+  
+
+  
+  
+  
+//close map.on *(* 'style.load', function() *{*
+})
