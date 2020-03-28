@@ -7,9 +7,9 @@ var geodata
 $.getJSON('data/school_points.geojson', function (results) {
     // Assign the results to the geojsonData variable
     geodata = results;
+    console.log(geodata.length);
 });
 
-console.log(geodata.length);
 
 var map = new mapboxgl.Map({
   container: 'map-container',
