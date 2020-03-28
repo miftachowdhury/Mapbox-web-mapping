@@ -48,13 +48,13 @@ map.on('style.load', function() {
     type: 'circle',
     source:'school-source',
     layout: {
-      visibility: 'none'
+      visibility: 'visible'
     },
     
   //close map.addLayer({
   });
     
- map.setFilter('school-points', ['==', 'geodata.features.properties.SCHOOLNAME', inputSchool]);
+ map.setFilter('school-points', ['==', 'SCHOOLNAME', inputSchool]);
  map.setLayoutProperty('school-points', 'visibility', 'visible'); 
   
   
