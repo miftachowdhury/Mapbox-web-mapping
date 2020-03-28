@@ -8,9 +8,15 @@ $.getJSON('data/school_points.geojson', function (results) {
     console.log(geodata.features);
 });
 
-console.log(geodata.features);
+var schFeats = {};
+geodata.features.forEach((item) => {
+  var obj = Object.assign({}, item);
+  schFeats.push(obj);
+});
 
-var schNames = geodata.features.map(function(item) {
+console.log(schFeats);
+
+var schNames = schFeats.map(function(item) {
     return item.properties.SCHOOLNAME;
 });
 console.log(schNames);
