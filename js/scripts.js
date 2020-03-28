@@ -4,7 +4,7 @@ var initialCenterPoint = [-73.975, 40.735]
 var initialZoom = 10
 var geodata
 
-$.getJSON('.data/school_points.gejson', function (results) {
+$.getJSON('data/school_points.gejson', function (results) {
     // Assign the results to the geojsonData variable
     geodata = results;
 });
