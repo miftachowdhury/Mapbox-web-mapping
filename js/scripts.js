@@ -2,6 +2,14 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWNob3dkaHVyeSIsImEiOiJjazZzdHJta2swNzN2M2tye
 
 var initialCenterPoint = [-73.975, 40.735]
 var initialZoom = 10
+var geodata
+
+$.getJSON('.data/school_points.gejson', function (results) {
+    // Assign the results to the geojsonData variable
+    geodata = results;
+});
+
+console.log(geodata.length);
 
 var map = new mapboxgl.Map({
   container: 'map-container',
@@ -40,9 +48,8 @@ map.on('style.load', function() {
     id: 'school-points',
     type: 'circle',
     source:'school-source',
-    paint: {
-
-  //close paint: *{*	
+    layout: {
+      visibility: 'none'
     },
     
   //close map.addLayer({
