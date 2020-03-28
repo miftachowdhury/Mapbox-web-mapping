@@ -56,7 +56,19 @@ map.on('style.load', function() {
     
  map.setFilter('school-points', ['==', 'SCHOOLNAME', inputSchool]);
  map.setLayoutProperty('school-points', 'visibility', 'visible'); 
-  
+
+arrProgsNYC.forEach((item) => { 
+    oneMarker = new mapboxgl.Marker({
+        color: "#008000"
+    })
+        .setLngLat([item.long, item.lat])
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                  .setHTML(`<b>${item.facName}</b><br>${item.phone}`))
+        .addTo(map);
+    currentProgMarkers.push(oneMarker);       
+    
+    //close arrProgsNYC.forEach
+    });
   
   
 //close map.on *(* 'style.load', function() *{*
