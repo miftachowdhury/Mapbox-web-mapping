@@ -29,29 +29,36 @@ data.forEach((item) => {
   arrProgs.push(objProg);
 });
 
-// check the number of programs in the list of NYS childcare programs
+// check the number of childcare programs NYS
 console.log(arrProgs.length);
+// 13,399 programs in NYS
 
+// create an array that is a subset of the NYS programs array, filtering for only NYC programs
 arrProgsNYC = [];
 arrProgsNYC = arrProgs.filter(obj=> {
       return obj.region==='NYCDOH';
     });
 
+// check the number of childcare programs in NYC
 console.log(arrProgsNYC.length);
+// 7,045 programs in NYC - don't map all of them
 
 $(document).ready(function() {
   
-      // Create and map markers
-    var currentMarkers = [];
-    arrProgsNYC.forEach((item) => { 
-       oneMarker = new mapboxgl.Marker({
-          color: "#008000"
-        })
-        .setLngLat([item.long, item.lat])
-        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                  .setHTML(`<b>${item.facName}</b><br>${item.phone}`))
-        .addTo(map);
-       currentMarkers.push(oneMarker);       
-    });
+    // create and map markers
+    var currentProgMarkers = [];
+    var currentSchMarkers = [];  
+  
+    
+    //arrProgsNYC.forEach((item) => { 
+    //   oneMarker = new mapboxgl.Marker({
+    //      color: "#008000"
+    //    })
+    //    .setLngLat([item.long, item.lat])
+    //    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    //              .setHTML(`<b>${item.facName}</b><br>${item.phone}`))
+    //    .addTo(map);
+    //   currentProgMarkers.push(oneMarker);       
+    //});
        
 });
