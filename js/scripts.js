@@ -1,17 +1,16 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibWNob3dkaHVyeSIsImEiOiJjazZzdHJta2swNzN2M2tyeHBmZTcycTI4In0.StlNQAWNUjcDoPBeZyIvGw';
 
 var geodata = {}
-var schoolFeats = {}
 
 // create an object containing features object from geojson file
 $.getJSON('data/school_points.geojson', function (results) {
     geodata = results;
+    console.log(geodata.features);
 });
 
-schoolFeats = geodata.features
-console.log(schoolFeats.length);
+console.log(geodata.features);
 
-var schNames = schoolFeats.map(function(item) {
+var schNames = geodata.features.map(function(item) {
     return item.properties.SCHOOLNAME;
 });
 console.log(schNames);
