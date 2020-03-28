@@ -57,7 +57,12 @@ map.on('style.load', function() {
  map.setFilter('school-points', ['==', 'SCHOOLNAME', inputSchool]);
  map.setLayoutProperty('school-points', 'visibility', 'visible'); 
 
-arrProgsNYC.forEach((item) => { 
+ 
+    
+    // create and map markers for childcare centers
+    var currentMarkers = [];
+    
+    arrProgsNYC.forEach((item) => { 
     oneMarker = new mapboxgl.Marker({
         color: "#008000"
     })
@@ -65,7 +70,7 @@ arrProgsNYC.forEach((item) => {
         .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
                   .setHTML(`<b>${item.facName}</b><br>${item.phone}`))
         .addTo(map);
-    currentProgMarkers.push(oneMarker);       
+    currentMarkers.push(oneMarker);       
     
     //close arrProgsNYC.forEach
     });
