@@ -1,15 +1,16 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibWNob3dkaHVyeSIsImEiOiJjazZzdHJta2swNzN2M2tyeHBmZTcycTI4In0.StlNQAWNUjcDoPBeZyIvGw';
 
-var geodata
-var features
+var geodata = {}
+var features = {}
 
 $.getJSON('data/school_points.geojson', function (results) {
-    // Assign the results to the geojsonData variable
+    // Assign the results to the geodata variable
     geodata = results;
+    features = geodata.features
+    console.log(features.length);
 });
 
-var features = geodata.features
-console.log(features.length);
+
 
 var initialCenterPoint = [-73.975, 40.735]
 var initialZoom = 10
