@@ -36,17 +36,11 @@ map.on('style.load', function() {
     data: './data/school_points.geojson',
   });
   
-  // add empty source for highlight feature later
-  map.addSource('highlight-feature', {
-    type: 'geojson',
-    data: {
-      type: 'FeatureCollection',
-      features: []
-    }
-  }) 
-  
+    
   // let's make sure the sources got added by logging the current map state to the console
   console.log(map.getStyle().sources)
+    
+  var inputSchool = "M.S. 002";  
  
   // add the school points layer to the map
   map.addLayer({
@@ -59,10 +53,9 @@ map.on('style.load', function() {
     
   //close map.addLayer({
   });
-  
-  
-  
-
+    
+ map.setFilter('school-points', ['==', 'geodata.features.properties.SCHOOLNAME', inputSchool]);
+ map.setLayoutProperty('school-points', 'visibility', 'visible'); 
   
   
   
