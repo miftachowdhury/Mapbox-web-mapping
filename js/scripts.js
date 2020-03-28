@@ -39,7 +39,7 @@ map.on('style.load', function() {
   map.addLayer({
     id: 'school-points',
     type: 'circle',
-    source:'philly-bike',
+    source:'school-source',
     paint: {
 
   //close paint: *{*	
