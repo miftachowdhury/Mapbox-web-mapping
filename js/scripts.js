@@ -80,7 +80,7 @@ $("#schoolList").easyAutocomplete(options);
     type: 'circle',
     source:'school-source',
     layout: {
-      visibility: 'visible'
+      visibility: 'none'
     },
     
   //close map.addLayer({
