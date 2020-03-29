@@ -7,20 +7,9 @@ var geodata = {}
         return el.properties.SCHOOLNAME;
     });
     console.log(schNames);
-
-var inputSchool = ''
 	    
 var options = {
-	data: schNames
-	
-	list: {
-
-		onSelectItemEvent: function() {
-			var inputSchool = ''
-			inputSchool = $("#schoolList");
-		}
-	}
-	 
+	data: schNames 
 };
 
 $("#schoolList").easyAutocomplete(options);
