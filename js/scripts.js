@@ -15,6 +15,22 @@ map.addControl(new mapboxgl.NavigationControl());
 
 // wait for the initial style to Load
 map.on('style.load', function() {
+    
+   var currentMarkers = [];
+   arrProgsNYC.forEach((item) => { 
+    oneMarker = new mapboxgl.Marker({
+        color: "#008000"
+    })
+        .setLngLat([item.long, item.lat])
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                  .setHTML(`<b>${item.facName}</b><br>
+                                ${item.phone}<br>
+                                Infant Capacity: ${item.infCap}<br>
+                                Toddler Capacity: ${item.toddCap}<br>
+                                Pre-School Capacity: ${item.preCap}<br>
+                                School-Age Capacity: ${item.schCap}`))
+        .addTo(map);
+    currentMarkers.push(oneMarker);      
   
   // converted shapefile to GeoJSON from: https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr
   // add GeoJSON source to the map
