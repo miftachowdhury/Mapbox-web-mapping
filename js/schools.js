@@ -7,13 +7,19 @@ var geodata = {}
         return el.properties.SCHOOLNAME;
     });
     console.log(schNames);
-   
+
+var inputSchools = ''
+	    
 var options = {
 	data: schNames,
 	list: {
 
 		match: {
 			enabled: true
+		},
+		
+		onClickEvent: function() {
+			inputSchools=$(this).val();
 		}
 	}
 	
