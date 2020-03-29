@@ -39,12 +39,12 @@ map.on('style.load', function() {
     var geodata = {}
     $.getJSON('data/school_points.geojson', function (results) {
         geodata = results;
-        console.log(geodata.features);
+
     
     var schNames = geodata.features.map(function (el) {
         return el.properties.SCHOOLNAME;
     });
-    console.log(schNames);
+      
     var inputSchool = ''            
       var options = {
         data: schNames,
@@ -70,10 +70,6 @@ $("#schoolList").easyAutocomplete(options);
     data: './data/school_points.geojson',
   });
   
-    
-  // let's make sure the sources got added by logging the current map state to the console
-  console.log(map.getStyle().sources)
-    
   
   // add the school points layer to the map
   map.addLayer({
