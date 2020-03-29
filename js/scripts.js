@@ -54,7 +54,7 @@ map.on('style.load', function() {
           },
           
           onClickEvent: function() {
-            inputSchool=$(this).val();
+            inputSchool=$(#schoolList).val();
           }
         }
 };
@@ -91,9 +91,7 @@ $("#schoolList").easyAutocomplete(options);
 
  
  // fly to the school
-    
-
-      
+         
         var pickedSchool = geodata.features.filter(obj => {
           return obj.properties.SCHOOLNAME === inputSchool
          })
@@ -106,11 +104,6 @@ $("#schoolList").easyAutocomplete(options);
         zoom: 15
       })
      
-      var pickedSchool = geodata.features.filter(obj => {
-        return obj.properties.SCHOOLNAME === inputSchool
-      })
-      console.log(pickedSchool);
-      
       // create and map markers for childcare centers
       var currentMarkers = [];
            
