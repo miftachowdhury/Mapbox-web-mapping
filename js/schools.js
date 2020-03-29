@@ -12,8 +12,8 @@ var options = {
 	data: schNames,
 	list: {
 
-		onSelectItemEvent: function() {
-
+		match: {
+			enabled: true
 		}
 	}
 	
