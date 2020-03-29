@@ -52,7 +52,7 @@ var EasyAutocomplete = (function(scope){
 					}
 				},
 
-				maxNumberOfElements: 6,
+				maxNumberOfElements: 1800,
 
 				hideOnEmptyPhrase: true,
 
