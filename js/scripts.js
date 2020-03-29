@@ -64,7 +64,8 @@ map.on('style.load', function() {
          })
         console.log(pickedSchool);
       
-      var schLngLat = pickedSchool.geometry.coordinates
+      var schLngLat = pickedSchool.properties.SCH_TYPE
+      console.log(schLngLat)
       map.flyTo({
         center: schLngLat,
         zoom: 15
