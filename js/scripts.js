@@ -87,11 +87,13 @@ map.on('style.load', function() {
       var currentMarkers = [];
       
       var inputZIP = pickedSchool[0].properties.ZIP; 
+      console.log(inputZIP)
       
       arrZIP = [];
       arrZIP = arrProgsNYC.filter(obj=> {
         return obj.zip === inputZIP;
       });
+      console.log(arrProgsNYC[2])
     
     arrZIP.forEach((item) => { 
     oneMarker = new mapboxgl.Marker({
