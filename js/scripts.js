@@ -54,7 +54,8 @@ map.on('style.load', function() {
           },
           
           onClickEvent: function() {
-            inputSchool=$(#schoolList).val();
+            inputSchool=$(#schoolList);
+            console.log(inputSchool)                          
           }
         }
 };
