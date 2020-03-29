@@ -40,7 +40,8 @@ map.on('style.load', function() {
   // let's make sure the sources got added by logging the current map state to the console
   console.log(map.getStyle().sources)
     
-  var inputSchool = "M.S. 002";  
+  var inputSchool = "M.S. 002";
+  var inputZIP = '10469';
  
   // add the school points layer to the map
   map.addLayer({
@@ -62,7 +63,12 @@ map.on('style.load', function() {
     // create and map markers for childcare centers
     var currentMarkers = [];
     
-    arrProgsNYC.forEach((item) => { 
+    arrZIP = [];
+    arrZIP = arrProgsNYC.filter(obj=> {
+      return obj.zip === inputZIP;
+    });
+    
+    arrZIP.forEach((item) => { 
     oneMarker = new mapboxgl.Marker({
         color: "#008000"
     })
@@ -72,7 +78,7 @@ map.on('style.load', function() {
         .addTo(map);
     currentMarkers.push(oneMarker);       
     
-    //close arrProgsNYC.forEach
+    //close arrZIP.forEach
     });
   
   
