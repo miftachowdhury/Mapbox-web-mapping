@@ -91,7 +91,7 @@ map.on('style.load', function() {
       
       arrZIP = [];
       arrZIP = arrProgsNYC.filter(obj=> {
-        return obj.zip === inputZIP;
+        return obj.zip === inputZIP.toString();
       });
       console.log(arrProgsNYC[2])
     
