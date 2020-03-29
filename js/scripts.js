@@ -28,7 +28,6 @@ map.on('style.load', function() {
   console.log(map.getStyle().sources)
     
   var inputSchool = "M.S. 002";
-  var inputZIP = '10469';
  
   // add the school points layer to the map
   map.addLayer({
@@ -64,7 +63,7 @@ map.on('style.load', function() {
          })
         console.log(pickedSchool);
       
-      var schLngLat = pickedSchool[0].properties.SCH_TYPE
+      var schLngLat = pickedSchool[0].geometry.coordinates
       console.log(schLngLat)
       map.flyTo({
         center: schLngLat,
@@ -78,7 +77,8 @@ map.on('style.load', function() {
     
     // create and map markers for childcare centers
     var currentMarkers = [];
-    
+    var inputZIP = '10469';  
+  
     arrZIP = [];
     arrZIP = arrProgsNYC.filter(obj=> {
       return obj.zip === inputZIP;
