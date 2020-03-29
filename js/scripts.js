@@ -75,6 +75,21 @@ map.on('style.load', function() {
         return el.properties.SCHOOLNAME;
     });
     console.log(schNames);
+    var inputSchools = ''            
+      var options = {
+        data: schNames,
+        list: {
+          match: {
+            enabled: true
+          },
+          
+          onClickEvent: function() {
+            inputSchools=$(this).val();
+          }
+        }
+};
+
+$("#schoolList").easyAutocomplete(options);
       
         var pickedSchool = geodata.features.filter(obj => {
           return obj.properties.SCHOOLNAME === inputSchool
@@ -88,13 +103,6 @@ map.on('style.load', function() {
         zoom: 15
       })
      
-    //close $.getJSON
-    });
-   
-    var geodata = {}
-    $.getJSON('data/school_points.geojson', function (results) {
-        geodata = results;
-      
       var pickedSchool = geodata.features.filter(obj => {
         return obj.properties.SCHOOLNAME === inputSchool
       })
