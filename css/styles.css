@@ -34,12 +34,6 @@ button:hover {
   background-color: #006987;
 }
 
-#feature-info {
-  background: lightblue;
-  padding: 15px;
-  min-height: 100px;
-  font-size: 1.3rem;
-}
 
 /* sidebar is fixed with and positioned to the left */
 #sidebar {
@@ -48,8 +42,8 @@ button:hover {
   top: 0;
   bottom: 0;
   width: 450px;
-  background-color: darkgreen;
-  color: #FFF;
+  background-color: #00A86B;
+  color: black;
   padding: 25px;
   box-sizing: border-box;
 }
