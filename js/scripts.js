@@ -34,7 +34,34 @@ map.on('style.load', function() {
      
      //close arrProgsNYC.forEach
     });
+ 
+      // create an object containing features object from geojson file
+    var geodata = {}
+    $.getJSON('data/school_points.geojson', function (results) {
+        geodata = results;
+        console.log(geodata.features);
+    
+    var schNames = geodata.features.map(function (el) {
+        return el.properties.SCHOOLNAME;
+    });
+    console.log(schNames);
+    var inputSchool = ''            
+      var options = {
+        data: schNames,
+        list: {
+          match: {
+            enabled: true
+          },
+          
+          onClickEvent: function() {
+            inputSchool=$(this).val();
+          }
+        }
+};
+
+$("#schoolList").easyAutocomplete(options);
   
+    
   // converted shapefile to GeoJSON from: https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr
   // add GeoJSON source to the map
   map.addSource('school-source', {
@@ -65,31 +92,7 @@ map.on('style.load', function() {
  
  // fly to the school
     
-    // create an object containing features object from geojson file
-    var geodata = {}
-    $.getJSON('data/school_points.geojson', function (results) {
-        geodata = results;
-        console.log(geodata.features);
-    
-    var schNames = geodata.features.map(function (el) {
-        return el.properties.SCHOOLNAME;
-    });
-    console.log(schNames);
-    var inputSchools = ''            
-      var options = {
-        data: schNames,
-        list: {
-          match: {
-            enabled: true
-          },
-          
-          onClickEvent: function() {
-            inputSchools=$(this).val();
-          }
-        }
-};
 
-$("#schoolList").easyAutocomplete(options);
       
         var pickedSchool = geodata.features.filter(obj => {
           return obj.properties.SCHOOLNAME === inputSchool
