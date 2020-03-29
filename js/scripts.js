@@ -72,6 +72,7 @@ map.on('style.load', function() {
     //close $.getJSON
     });
    
+   var inputSchool = $(#schoolList).val()
 
    var geodata = {}
     $.getJSON('data/school_points.geojson', function (results) {
