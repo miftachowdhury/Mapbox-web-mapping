@@ -53,8 +53,8 @@ map.on('style.load', function() {
             enabled: true
           },
           
-          onClickEvent: function() {
-            inputSchool=$(this).val();
+          onSelectEvent: function() {
+            inputSchool=$("select#schoolList").val();
             console.log(inputSchool)                          
           }
         }
