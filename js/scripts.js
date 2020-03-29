@@ -27,8 +27,7 @@ map.on('style.load', function() {
   // let's make sure the sources got added by logging the current map state to the console
   console.log(map.getStyle().sources)
     
-  var inputSchool = "M.S. 002";
- 
+  
   // add the school points layer to the map
   map.addLayer({
     id: 'school-points',
