@@ -56,7 +56,7 @@ map.on('style.load', function() {
           },
           
           onClickEvent: function() {
-            inputSchool=$(#schoolList).val();
+            inputSchool=$("#schoolList").val();
             console.log(inputSchool)                          
           }
         }
