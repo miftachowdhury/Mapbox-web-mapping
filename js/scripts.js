@@ -94,7 +94,7 @@ map.on('style.load', function() {
       console.log(schLngLat)
       map.flyTo({
         center: schLngLat,
-        zoom: 15
+        zoom: 12.5
       })
      
       // create and map markers for childcare centers
@@ -140,19 +140,8 @@ map.on('style.load', function() {
     //close arrZIP.forEach
     });
   
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+         
+             
             
           //close onclick event  
           }
