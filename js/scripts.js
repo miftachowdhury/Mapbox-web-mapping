@@ -77,7 +77,7 @@ map.on('style.load', function() {
     
     // create and map markers for childcare centers
     var currentMarkers = [];
-    var inputZIP = '10469';  
+    var inputZIP = pickedSchool[0].properties.ZIP;  
   
     arrZIP = [];
     arrZIP = arrProgsNYC.filter(obj=> {
