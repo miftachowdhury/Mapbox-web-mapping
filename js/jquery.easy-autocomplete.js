@@ -84,8 +84,8 @@ var EasyAutocomplete = (function(scope){
 				/* Events */
 				onClickEvent: function() {},
 				onSelectItemEvent: function() {
-				
-				
+					var inputSchool = ''
+					inputSchool = $("#schoolList");
 				},
 				onLoadEvent: function() {},
 				onChooseEvent: function() {},
