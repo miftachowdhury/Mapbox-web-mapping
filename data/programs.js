@@ -36,7 +36,7 @@ console.log(arrProgs.length);
 // create an array that is a subset of the NYS programs array, filtering for only NYC Day Care Centers
 arrProgsNYC = [];
 arrProgsNYC = arrProgs.filter(obj=> {
-      return obj.region==='NYCDOH' && obj.type==='DCC';
+      return obj.region==='NYCDOH' && obj.type==='GFDC';
     });
 
 // check the number of childcare programs in NYC
