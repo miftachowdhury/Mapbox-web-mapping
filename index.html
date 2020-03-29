@@ -10,6 +10,18 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
     <link href='css/styles.css' rel='stylesheet' />
     
+    <!-- http://easyautocomplete.com/guide -->
+    <!-- JS file -->
+    <script src="path/to/jquery.easy-autocomplete.min.js"></script>
+    <!-- CSS file -->
+    <link rel="stylesheet" href="path/to/easy-autocomplete.min.css">
+    <!-- Additional CSS Themes file - not required-->
+    <link rel="stylesheet" href="path/to/easy-autocomplete.themes.min.css">
+	
+	<script src='data/raw_data.js'></script>
+	<script src='data/programs.js'></script>
+	<script src='data/school_points.geojson'></script>
+	
 </head>
 
     
@@ -18,7 +30,10 @@
   <div id='sidebar'>
     <h3>NYC Childcare Centers</h3>
     <p>This map shows childcare centers in New York City</p>
-    <div id='feature-info'></div>
+    
+   <input id="schoolList" />
+     
+   <div id='feature-info'></div>
           
   </div>
 
@@ -30,9 +45,6 @@
    src="https://code.jquery.com/jquery-3.4.1.min.js"
    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
    crossorigin="anonymous"></script>
-<script src='data/raw_data.js'></script>
-<script src='data/programs.js'></script>
-<script src='data/school_points.geojson'></script>
 <script src='js/scripts.js'></script>
 
 </body>
