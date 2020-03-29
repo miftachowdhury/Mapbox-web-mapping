@@ -61,8 +61,10 @@ map.on('style.load', function() {
  
  // fly to the school
     var pickedSchool = geodata.features.filter(obj => {
-        return obj.SCHOOLNAME === inputSchool
+        return obj.properties.SCHOOLNAME === inputSchool
     })        
+    
+    console.log(pickedSchool);
     
     var schLngLat = pickedSchool.geometry.coordinates
     map.flyTo({
