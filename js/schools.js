@@ -10,6 +10,14 @@ var geodata = {}
 
 var options = {
 	data: schNames
+	
+	list: {
+
+		onSelectItemEvent: function() {
+			var inputSchool = $("#schoolList");
+		}
+	}
+	 
 };
 
 $("#schoolList").easyAutocomplete(options);
