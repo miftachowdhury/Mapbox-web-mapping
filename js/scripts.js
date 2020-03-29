@@ -53,24 +53,27 @@ map.on('style.load', function() {
     $.getJSON('data/school_points.geojson', function (results) {
         geodata = results;
         console.log(geodata.features);
-    });
+    
     var schNames = geodata.features.map(function (el) {
         return el.properties.SCHOOLNAME;
     });
     console.log(schNames);
-    
-    var pickedSchool = geodata.features.filter(obj => {
-        return obj.properties.SCHOOLNAME === inputSchool
-    })        
-    
-    console.log(pickedSchool);
-    
-    var schLngLat = pickedSchool.geometry.coordinates
-    map.flyTo({
+      
+        var pickedSchool = geodata.features.filter(obj => {
+          return obj.properties.SCHOOLNAME === inputSchool
+         })
+        console.log(pickedSchool);
+      
+      var schLngLat = pickedSchool.geometry.coordinates
+      map.flyTo({
         center: schLngLat,
         zoom: 15
-    })
-    
+      })
+     
+    //close $.getJSON
+    });
+   
+
     
     // create and map markers for childcare centers
     var currentMarkers = [];
