@@ -8,13 +8,16 @@ var geodata = {}
     });
     console.log(schNames);
 
+var inputSchool = ''
+	    
 var options = {
 	data: schNames
 	
 	list: {
 
 		onSelectItemEvent: function() {
-			var inputSchool = $("#schoolList");
+			var inputSchool = ''
+			inputSchool = $("#schoolList");
 		}
 	}
 	 
