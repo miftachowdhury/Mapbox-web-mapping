@@ -46,6 +46,14 @@ map.on('style.load', function() {
     var schNames = geodata.features.map(function (el) {
         return el.properties.SCHOOLNAME;
     });
+     
+  // converted shapefile to GeoJSON from: https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr
+  // add GeoJSON source to the map
+  map.addSource('school-source', {
+    type: 'geojson',
+    data: './data/school_points.geojson',
+  });
+      
       
     var inputSchool = ''            
       var options = {
@@ -59,13 +67,6 @@ map.on('style.load', function() {
             inputSchool=$("#schoolList").val();
             console.log(inputSchool)
             
-              // converted shapefile to GeoJSON from: https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr
-  // add GeoJSON source to the map
-  map.addSource('school-source', {
-    type: 'geojson',
-    data: './data/school_points.geojson',
-  });
-  
   
   // add the school points layer to the map
   map.addLayer({
