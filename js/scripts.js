@@ -95,7 +95,7 @@ map.on('style.load', function() {
       console.log(schLngLat)
       map.flyTo({
         center: schLngLat,
-        zoom: 12.5
+        zoom: 15
       })
      
       // create and map markers for childcare centers
