@@ -1,5 +1,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibWNob3dkaHVyeSIsImEiOiJjazZzdHJta2swNzN2M2tyeHBmZTcycTI4In0.StlNQAWNUjcDoPBeZyIvGw';
 
+$(document).ready(function(){
+  
 var initialCenterPoint = [-73.975, 40.735]
 var initialZoom = 10
 
@@ -152,4 +154,7 @@ $("#schoolList").easyAutocomplete(options);
   
   
 //close map.on *(* 'style.load', function() *{*
-})
+});
+  
+//close documentready
+});
