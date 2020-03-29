@@ -114,7 +114,12 @@ map.on('style.load', function() {
     })
         .setLngLat([item.long, item.lat])
         .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                  .setHTML(`<b>${item.facName}</b><br>${item.phone}`))
+                  .setHTML(`<b>${item.facName}</b><br>
+                                ${item.phone}<br>
+                                Infant Capacity: ${item.infCap}<br>
+                                Toddler Capacity: ${item.toddCap}<br>
+                                Pre-School Capacity: ${item.preCap}<br>
+                                School-Age Capacity: ${item.schCap}`))
         .addTo(map);
     currentMarkers.push(oneMarker);       
     
