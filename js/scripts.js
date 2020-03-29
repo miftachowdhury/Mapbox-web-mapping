@@ -85,15 +85,28 @@ map.on('style.load', function() {
       
       // create and map markers for childcare centers
       var currentMarkers = [];
+           
+      var inputBoro = pickedSchool[0].properties.BORO; 
+      console.log(inputBoro)
       
-      var inputZIP = pickedSchool[0].properties.ZIP; 
-      console.log(inputZIP)
+      if (inputBoro='K') {
+        inputBoro = "Brooklyn"
+      } else if (inputBoro='Q') {
+        inputBoro = "Queens"
+      } else if (inputBoro='X') {
+        inputBoro = "Bronx"
+      } else if (inputBoro='M') {
+        inputBoro = "Manhattan"
+      } else if (inputBoro='R') {
+        inputBoro = "Staten Island"
+      }
+      console.log(inputBoro)
       
       arrZIP = [];
       arrZIP = arrProgsNYC.filter(obj=> {
-        return obj.zip === inputZIP.toString();
+        return obj.county === inputBoro;
       });
-      console.log(arrProgsNYC[2])
+      
     
     arrZIP.forEach((item) => { 
     oneMarker = new mapboxgl.Marker({
