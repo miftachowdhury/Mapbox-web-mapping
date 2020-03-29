@@ -13,7 +13,7 @@ var options = {
 	list: {
 
 		onSelectItemEvent: function() {
-			var inputSchool = $(#schoolList);
+
 		}
 	}
 	
