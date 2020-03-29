@@ -59,6 +59,17 @@ map.on('style.load', function() {
  map.setLayoutProperty('school-points', 'visibility', 'visible'); 
 
  
+ // fly to the school
+    var pickedSchool = geodata.features.filter(obj => {
+        return obj.SCHOOLNAME === 6
+    })        
+    
+    var schLngLat = pickedSchool.geometry.coordinates
+    map.flyTo({
+        center: schLngLat,
+        zoom: 15
+    })
+    
     
     // create and map markers for childcare centers
     var currentMarkers = [];
@@ -80,6 +91,8 @@ map.on('style.load', function() {
     
     //close arrZIP.forEach
     });
+    
+
   
   
 //close map.on *(* 'style.load', function() *{*
