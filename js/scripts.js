@@ -30,7 +30,10 @@ map.on('style.load', function() {
                                 Pre-School Capacity: ${item.preCap}<br>
                                 School-Age Capacity: ${item.schCap}`))
         .addTo(map);
-    currentMarkers.push(oneMarker);      
+    currentMarkers.push(oneMarker);
+     
+     //close arrProgsNYC.forEach
+    });
   
   // converted shapefile to GeoJSON from: https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr
   // add GeoJSON source to the map
@@ -148,4 +151,4 @@ map.on('style.load', function() {
   
   
 //close map.on *(* 'style.load', function() *{*
-});
+})
