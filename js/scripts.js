@@ -148,4 +148,4 @@ map.on('style.load', function() {
   
   
 //close map.on *(* 'style.load', function() *{*
-})
+});
