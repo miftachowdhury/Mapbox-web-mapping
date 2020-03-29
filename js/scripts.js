@@ -57,15 +57,9 @@ map.on('style.load', function() {
           
           onClickEvent: function() {
             inputSchool=$("#schoolList").val();
-            console.log(inputSchool)                          
-          }
-        }
-};
-
-$("#schoolList").easyAutocomplete(options);
-  
-    
-  // converted shapefile to GeoJSON from: https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr
+            console.log(inputSchool)
+            
+              // converted shapefile to GeoJSON from: https://data.cityofnewyork.us/Education/School-Point-Locations/jfju-ynrr
   // add GeoJSON source to the map
   map.addSource('school-source', {
     type: 'geojson',
@@ -146,6 +140,33 @@ $("#schoolList").easyAutocomplete(options);
     //close arrZIP.forEach
     });
   
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          //close onclick event  
+          }
+          
+         //close list 
+        }
+        
+      //close var options
+      };
+
+$("#schoolList").easyAutocomplete(options);
+  
+    
+
       
       
   //close $.getJSON
