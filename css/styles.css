@@ -46,6 +46,7 @@ button:hover {
   color: black;
   padding: 25px;
   box-sizing: border-box;
+  font-size: 30px;
 }
 
 .checkbox {
