@@ -33,10 +33,10 @@ data.forEach((item) => {
 console.log(arrProgs.length);
 // 13,399 programs in NYS
 
-// create an array that is a subset of the NYS programs array, filtering for only NYC programs
+// create an array that is a subset of the NYS programs array, filtering for only NYC Day Care Centers
 arrProgsNYC = [];
 arrProgsNYC = arrProgs.filter(obj=> {
-      return obj.region==='NYCDOH';
+      return obj.region==='NYCDOH' && obj.type==='DCC';
     });
 
 // check the number of childcare programs in NYC
