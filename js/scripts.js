@@ -74,15 +74,24 @@ map.on('style.load', function() {
     });
    
 
-    
-    // create and map markers for childcare centers
-    var currentMarkers = [];
-    var inputZIP = pickedSchool[0].properties.ZIP;  
-  
-    arrZIP = [];
-    arrZIP = arrProgsNYC.filter(obj=> {
-      return obj.zip === inputZIP;
-    });
+   var geodata = {}
+    $.getJSON('data/school_points.geojson', function (results) {
+        geodata = results;
+      
+      var pickedSchool = geodata.features.filter(obj => {
+        return obj.properties.SCHOOLNAME === inputSchool
+      })
+      console.log(pickedSchool);
+      
+      // create and map markers for childcare centers
+      var currentMarkers = [];
+      
+      var inputZIP = pickedSchool[0].properties.ZIP; 
+      
+      arrZIP = [];
+      arrZIP = arrProgsNYC.filter(obj=> {
+        return obj.zip === inputZIP;
+      });
     
     arrZIP.forEach((item) => { 
     oneMarker = new mapboxgl.Marker({
@@ -96,7 +105,11 @@ map.on('style.load', function() {
     
     //close arrZIP.forEach
     });
-    
+  
+      
+      
+  //close $.getJSON
+  });    
 
   
   
