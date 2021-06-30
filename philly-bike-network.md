@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset='utf-8' />
+    <title>Philly Bike Network</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://raw.githubusercontent.com/miftachowdhury/philly-bike-network/master/css/styles.css?token=ALJN23WD2W5RWDDMEIHGIA3A3SV52' rel='stylesheet' />
+</head>
+
+<body>
+
+  <div id='sidebar'>
+    <h3>Philadelphia Bike Network</h3>
+    <p>This map shows bike lanes in Philadelphia, color-coded by lane type</p>
+    <div id='feature-info'></div>
+      
+    <div id="type-checkboxes">
+        <h4>Show Lanes:</h4>
+        <form>
+            <input type="checkbox" class="box" id="protected" name="laneType" value="protected">
+            <label for="protected" class="checkbox">Protected</label><br>
+            
+            <input type="checkbox" class="box" id="paintBuff" name="laneType" value="paintBuff">
+            <label for="paintBuff" class="checkbox">Paint Buffered</label><br>
+            
+            <input type="checkbox" class="box" id="conventional" name="laneType" value="conventional">
+            <label for="conventional" class="checkbox">Conventional</label><br>
+            
+            <input type="checkbox" class="box" id="busLane" name="laneType" value="busLane">
+            <label for="busLane" class="checkbox">Bus Bike Lane</label><br>
+            
+            <input type="checkbox" class="box" id="sharrow" name="laneType" value="sharrow">
+            <label for="sharrow" class="checkbox">Sharrows</label><br>
+            
+            <input type="checkbox" class="box" id="unprotected" name="laneType" value="unprotected">
+            <label for="unprotected" class="checkbox">Unprotected</label><br>
+                        
+            <br>
+        </form>
+    </div>  
+      
+      
+  </div>
+
+  <div id='map-container'></div>
+
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+<script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+<script src='https://raw.githubusercontent.com/miftachowdhury/advanced-GIS/main/philly-bike-network/js/scripts.js'></script>
+
+</body>
+</html>
