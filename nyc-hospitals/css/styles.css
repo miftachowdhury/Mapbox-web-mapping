@@ -1,0 +1,74 @@
+/* mostly borrowed from Chris */
+
+/* use a non-serif font */
+html {
+  font-family: 'verdana', sans-serif;
+}
+
+/* background image source: https://www.freepik.com/free-photos-vectors/background Background vector created by freepik - www.freepik.com*/
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(https://image.freepik.com/free-vector/blue-medical-background-concept-poster-design-vector_1017-11946.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+
+/* absolute position the map container as full screen, leaving 300 pixels on the left */
+#map-container {
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  right: 0;
+  left: 600px;
+  border: 1px solid black;
+}
+
+#options-box {
+ position:absolute;
+ top: 40px;
+ bottom: 0;
+ width: 600px;
+ background-image: url(https://image.freepik.com/free-vector/blue-medical-background-concept-poster-design-vector_1017-11946.jpg);
+ background-size: cover;
+ border: 1px solid black;
+}
+
+#type-checkboxes{
+  margin-top:40px;
+  margin-left:80px;
+}
+
+#boro-checkboxes{
+  margin-top:40px;
+  margin-left:80px;
+}
+
+.checkbox {
+  font-size:1.5rem;
+}
+
+input.box {
+ width: 20px;
+ height: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+h4 {
+  font-size:1.3rem;
+  margin-bottom:10px;
+}
+
+#data-source {
+  font-size:0.75rem;
+  margin-left: 5px;
+  margin-top:230px;
+  color:whitesmoke;
+}

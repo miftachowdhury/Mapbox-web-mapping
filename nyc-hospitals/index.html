@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>NYC Hospital Map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='css/styles.css' rel='stylesheet' />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<h3>Map of Public Hospitals and Health Centers in New York City</h3>
+
+<div id='map-container'></div>
+
+<div id='options-box'>
+
+    <div id="type-checkboxes">
+        <h4>    Select Facility Type(s)</h4>
+        <form>
+            <input type="checkbox" class="box" id="hosp" name="hc-type" value="Acute Care Hospital">
+            <label for="hosp" class="checkbox">Hospital</label><br>
+            
+            <input type="checkbox" class="box" id="childHC" name="hc-type" value="Child Health Center">
+            <label for="childHC" class="checkbox">Child Health Center</label><br>
+            
+            <input type="checkbox" class="box" id="dxtx" name="hc-type" value="Diagnostic & Treatment Center">
+            <label for="dxtx" class="checkbox">Diagnostic & Treatment Center</label><br>
+            
+            <input type="checkbox" class="box" id="nurse" name="hc-type" value="Nursing Home">
+            <label for="nurse" class="checkbox">Nursing Home</label><br><br>
+        </form>
+    </div>
+    
+    <div id="boro-checkboxes">
+        <h4>    Select Borough(s)</h4>
+        <form>
+            <input type="checkbox" class="box" id="X" name="boro" value="Bronx">
+            <label for="X" class="checkbox">Bronx</label><br>
+            
+            <input type="checkbox" class="box" id="M" name="boro" value="Manhattan">
+            <label for="M" class="checkbox">Manhattan</label><br>
+            
+            <input type="checkbox" class="box" id="K" name="boro" value="Brooklyn">
+            <label for="K" class="checkbox">Brooklyn</label><br>
+            
+            <input type="checkbox" class="box" id="Q" name="boro" value="Queens">
+            <label for="Q" class="checkbox">Queens</label><br>
+            
+            <input type="checkbox" class="box" id="R" name="boro" value="Staten Island">
+            <label for="R" class="checkbox">Staten Island</label><br>
+        </form>
+    </div>
+
+
+    <div id="zip-code-entry">
+        
+    </div>
+    
+    <div id="data-source">Source: https://data.cityofnewyork.us/Health/NYC-Health-Hospitals-Facilities-2011/ymhw-9cz9</div>
+
+</div>
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+<script src = 'js/raw_data.js'></script>
+<script src = 'js/scripts.js'></script>    
+<script src = 'js/data.js'></script>
+
+</body>
+</html>
